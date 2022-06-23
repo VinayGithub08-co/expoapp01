@@ -4,7 +4,6 @@ import {
   View,
   FlatList,
   TouchableOpacity,
-  Image,
   StyleSheet,
 } from "react-native";
 import { images, COLORS, SIZES, SHADOWS } from "../../constant";
