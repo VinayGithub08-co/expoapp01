@@ -8,37 +8,8 @@ import {
   StyleSheet,
 } from "react-native";
 import { images, COLORS, SIZES, SHADOWS } from "../../constant";
-import {
-  OpenSans_300Light,
-  OpenSans_300Light_Italic,
-  OpenSans_400Regular,
-  OpenSans_400Regular_Italic,
-  OpenSans_600SemiBold,
-  OpenSans_600SemiBold_Italic,
-  OpenSans_700Bold,
-  OpenSans_700Bold_Italic,
-  OpenSans_800ExtraBold,
-  OpenSans_800ExtraBold_Italic,
-  useFonts,
-} from "@expo-google-fonts/open-sans";
-import AppLoading from "expo-app-loading";
 
 const Categories = () => {
-  let [fontsLoaded] = useFonts({
-    OpenSans_300Light,
-    OpenSans_300Light_Italic,
-    OpenSans_400Regular,
-    OpenSans_400Regular_Italic,
-    OpenSans_600SemiBold,
-    OpenSans_600SemiBold_Italic,
-    OpenSans_700Bold,
-    OpenSans_700Bold_Italic,
-    OpenSans_800ExtraBold,
-    OpenSans_800ExtraBold_Italic,
-  });
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
   let listOfTabs = [
     {
       id: 0,
@@ -109,7 +80,7 @@ const Categories = () => {
         </View>
         <FlatList
           data={listOfTabs}
-          keyExtractor={(item, index) => `${item}-${index}`}
+          keyExtractor={(item) => item.id}
           horizontal
           decelerationRate="fast"
           showsHorizontalScrollIndicator={false}
@@ -165,7 +136,6 @@ const styles = StyleSheet.create({
   pillText: {
     fontSize: SIZES.small,
     fontWeight: "600",
-    fontFamily: "OpenSans_400Regular",
   },
 });
 

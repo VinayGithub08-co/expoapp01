@@ -1,21 +1,7 @@
 import React, { useState } from "react";
 import { Text, View, TouchableOpacity, Image } from "react-native";
 import { images, COLORS, SIZES } from "../../constant";
-import User from "./User";import {
-  OpenSans_300Light,
-  OpenSans_300Light_Italic,
-  OpenSans_400Regular,
-  OpenSans_400Regular_Italic,
-  OpenSans_600SemiBold,
-  OpenSans_600SemiBold_Italic,
-  OpenSans_700Bold,
-  OpenSans_700Bold_Italic,
-  OpenSans_800ExtraBold,
-  OpenSans_800ExtraBold_Italic,
-  useFonts,
-} from "@expo-google-fonts/open-sans";
-import AppLoading from "expo-app-loading";
-
+import User from "./User";
 const ProfileHeader = () => {
   const [user, setUser] = useState(false);
   return (

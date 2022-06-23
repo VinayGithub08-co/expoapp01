@@ -16,40 +16,12 @@ import {
   Nftdb01,
 } from "../components";
 import { SIZES, NFTData, NFTGamingdb, COLORS, Nftdbb } from "../../constant";
-import {
-  OpenSans_300Light,
-  OpenSans_300Light_Italic,
-  OpenSans_400Regular,
-  OpenSans_400Regular_Italic,
-  OpenSans_600SemiBold,
-  OpenSans_600SemiBold_Italic,
-  OpenSans_700Bold,
-  OpenSans_700Bold_Italic,
-  OpenSans_800ExtraBold,
-  OpenSans_800ExtraBold_Italic,
-  useFonts,
-} from "@expo-google-fonts/open-sans";
-import AppLoading from "expo-app-loading";
 
 const HomeScreen = () => {
   const [Nft, setNft] = useState(NFTData);
   const [Nftdb, setNftdb] = useState(NFTGamingdb);
   const [NftDbb, setNftdbb] = useState(Nftdbb);
-  let [fontsLoaded] = useFonts({
-    OpenSans_300Light,
-    OpenSans_300Light_Italic,
-    OpenSans_400Regular,
-    OpenSans_400Regular_Italic,
-    OpenSans_600SemiBold,
-    OpenSans_600SemiBold_Italic,
-    OpenSans_700Bold,
-    OpenSans_700Bold_Italic,
-    OpenSans_800ExtraBold,
-    OpenSans_800ExtraBold_Italic,
-  });
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
+
   return (
     <>
       <View style={styles.HomeContainer}>
@@ -69,7 +41,6 @@ const HomeScreen = () => {
               style={{
                 fontSize: SIZES.font,
                 fontWeight: "600",
-                fontFamily: "OpenSans_600SemiBold",
               }}
             >
               Popular Nfts
@@ -81,7 +52,7 @@ const HomeScreen = () => {
             <View>
               <FlatList
                 data={Nft}
-                keyExtractor={(item) => item.toString()}
+                keyExtractor={(item) => item.id}
                 renderItem={({ item }) => <NftCard data={item} />}
                 horizontal
                 decelerationRate="fast"
@@ -101,7 +72,6 @@ const HomeScreen = () => {
                 style={{
                   fontSize: SIZES.font,
                   fontWeight: "600",
-                  fontFamily: "OpenSans_600SemiBold",
                 }}
               >
                 What can we help you find Charlotte ?
@@ -109,7 +79,7 @@ const HomeScreen = () => {
             </View>
             <FlatList
               data={Nftdb}
-              keyExtractor={(item) => item.toString()}
+              keyExtractor={(item) => item.id}
               renderItem={({ item }) => <NftGdb db={item} />}
               horizontal
               decelerationRate="fast"
@@ -132,7 +102,6 @@ const HomeScreen = () => {
                 color: COLORS.Gray2,
                 fontWeight: "600",
                 marginBottom: SIZES.base,
-                fontFamily: "OpenSans_600SemiBold",
               }}
             >
               Top-rated experiences
@@ -142,7 +111,6 @@ const HomeScreen = () => {
                 fontSize: SIZES.small,
                 color: COLORS.gray,
                 fontWeight: "600",
-                fontFamily: "OpenSans_600SemiBold",
               }}
             >
               Purchase the latest Nfts

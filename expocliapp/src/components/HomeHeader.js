@@ -8,37 +8,8 @@ import {
   Alert,
 } from "react-native";
 import { COLORS, SIZES, images } from "../../constant";
-import {
-  OpenSans_300Light,
-  OpenSans_300Light_Italic,
-  OpenSans_400Regular,
-  OpenSans_400Regular_Italic,
-  OpenSans_600SemiBold,
-  OpenSans_600SemiBold_Italic,
-  OpenSans_700Bold,
-  OpenSans_700Bold_Italic,
-  OpenSans_800ExtraBold,
-  OpenSans_800ExtraBold_Italic,
-  useFonts,
-} from "@expo-google-fonts/open-sans";
-import AppLoading from "expo-app-loading";
 
 const HomeHeader = () => {
-  let [fontsLoaded] = useFonts({
-    OpenSans_300Light,
-    OpenSans_300Light_Italic,
-    OpenSans_400Regular,
-    OpenSans_400Regular_Italic,
-    OpenSans_600SemiBold,
-    OpenSans_600SemiBold_Italic,
-    OpenSans_700Bold,
-    OpenSans_700Bold_Italic,
-    OpenSans_800ExtraBold,
-    OpenSans_800ExtraBold_Italic,
-  });
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
   const [searchNft, setSearchNft] = useState("");
 
   return (
@@ -69,7 +40,6 @@ const HomeHeader = () => {
               flex: 1,
               fontSize: SIZES.font,
               fontWeight: "600",
-              fontFamily: "OpenSans_600SemiBold",
             }}
             onChangeText={(nft) => setSearchNft(nft)}
             value={searchNft}
